@@ -1,0 +1,82 @@
+@import '../../../styles/variables.scss';
+
+.button {
+  padding: 0.625rem 1.25rem;
+  border-radius: $radius;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: $transition;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background: $primary;
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background: $primary-dark;
+  }
+}
+
+.secondary {
+  background: $secondary;
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background: darken($secondary, 10%);
+  }
+}
+
+.danger {
+  background: $danger;
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background: darken($danger, 10%);
+  }
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid $primary;
+  color: $primary;
+  
+  &:hover:not(:disabled) {
+    background: $primary;
+    color: $white;
+  }
+}
+
+.small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.medium {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.large {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+}

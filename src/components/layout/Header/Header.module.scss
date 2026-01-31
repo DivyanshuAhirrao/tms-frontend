@@ -1,0 +1,146 @@
+@import '../../../styles/variables.scss';
+
+.header {
+  height: 70px;
+  background: $white;
+  border-bottom: 1px solid $border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: $shadow-sm;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: $text-dark;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition;
+  
+  &:hover {
+    background: $light-bg;
+  }
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $primary;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.navLink {
+  color: $text-light;
+  font-weight: 500;
+  transition: $transition;
+  position: relative;
+  
+  &:hover {
+    color: $primary;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $primary;
+    transition: $transition;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primary, $primary-light);
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.username {
+  font-weight: 600;
+  color: $text-dark;
+  font-size: 0.875rem;
+}
+
+.role {
+  font-size: 0.75rem;
+  color: $text-light;
+  text-transform: capitalize;
+}
+
+.logoutBtn {
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: 1px solid $danger;
+  color: $danger;
+  border-radius: $radius;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: $transition;
+  
+  &:hover {
+    background: $danger;
+    color: $white;
+  }
+}

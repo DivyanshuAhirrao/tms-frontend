@@ -1,0 +1,94 @@
+@import '../../../styles/variables.scss';
+
+.detail {
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $border;
+}
+
+.shipmentNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $primary;
+}
+
+.status {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section {
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $border;
+  }
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed lighten($border, 5%);
+  
+  span {
+    color: $text-light;
+    font-size: 0.875rem;
+  }
+  
+  strong {
+    color: $text-dark;
+    font-size: 0.875rem;
+    text-align: right;
+  }
+}
+
+.instructions {
+  background: $light-bg;
+  padding: 1.5rem;
+  border-radius: $radius;
+  margin-bottom: 2rem;
+  
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: 0.75rem;
+  }
+  
+  p {
+    color: $text-dark;
+    line-height: 1.6;
+  }
+}
+
+.timestamps {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid $border;
+  font-size: 0.75rem;
+  color: $text-light;
+}

@@ -1,0 +1,118 @@
+@import '../../../styles/variables.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 280px;
+  height: calc(100vh - 70px);
+  background: $white;
+  border-right: 1px solid $border;
+  box-shadow: $shadow-md;
+  overflow-y: auto;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  
+  @media (max-width: 1023px) {
+    transform: translateX(-100%);
+    
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}
+
+.nav {
+  padding: 1.5rem 0;
+}
+
+.menuItem {
+  margin-bottom: 0.5rem;
+}
+
+.menuButton,
+.menuLink {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: $text-dark;
+  cursor: pointer;
+  transition: $transition;
+  text-align: left;
+  
+  &:hover {
+    background: $light-bg;
+    color: $primary;
+  }
+}
+
+.icon {
+  font-size: 1.25rem;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  flex: 1;
+  font-weight: 500;
+  font-size: 0.938rem;
+}
+
+.arrow {
+  font-size: 0.625rem;
+  transition: transform 0.3s ease;
+  
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.submenu {
+  background: $light-bg;
+  padding: 0.5rem 0;
+  animation: slideDown 0.3s ease;
+}
+
+.submenuLink {
+  display: block;
+  padding: 0.625rem 1.5rem 0.625rem 4rem;
+  color: $text-light;
+  font-size: 0.875rem;
+  transition: $transition;
+  
+  &:hover {
+    color: $primary;
+    background: rgba($primary, 0.05);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}

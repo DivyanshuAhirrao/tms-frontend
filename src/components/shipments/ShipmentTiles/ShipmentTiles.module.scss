@@ -1,0 +1,171 @@
+@import '../../../styles/variables.scss';
+
+.tilesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.tile {
+  background: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: $transition;
+  border: 2px solid transparent;
+  
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+    border-color: $primary;
+  }
+  
+  &.flagged {
+    border-color: $warning;
+    background: lighten($warning, 45%);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.shipmentNumber {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $primary;
+}
+
+.menuWrapper {
+  position: relative;
+}
+
+.menuBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid $border;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: $text-light;
+  transition: $transition;
+  
+  &:hover {
+    background: $light-bg;
+    color: $text-dark;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: $white;
+  border: 1px solid $border;
+  border-radius: $radius;
+  box-shadow: $shadow-lg;
+  overflow: hidden;
+  z-index: 10;
+  min-width: 140px;
+  
+  button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: $text-dark;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    &:hover {
+      background: $light-bg;
+    }
+    
+    &.delete {
+      color: $danger;
+      
+      &:hover {
+        background: lighten($danger, 45%);
+      }
+    }
+  }
+}
+
+.status {
+  padding: 0.375rem 0.875rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $white;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: $text-light;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 0.875rem;
+  color: $text-dark;
+  font-weight: 500;
+}
+
+.footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rate {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $secondary;
+}
+
+.weight {
+  font-size: 0.875rem;
+  color: $text-light;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .tilesContainer {
+    grid-template-columns: 1fr;
+  }
+}

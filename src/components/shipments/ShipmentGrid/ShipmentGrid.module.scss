@@ -1,0 +1,111 @@
+@import '../../../styles/variables.scss';
+
+.gridContainer {
+  background: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  
+  thead {
+    background: $light-bg;
+    
+    tr {
+      border-bottom: 2px solid $border;
+    }
+    
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: $text-dark;
+      white-space: nowrap;
+    }
+  }
+  
+  tbody {
+    tr {
+      border-bottom: 1px solid $border;
+      transition: $transition;
+      cursor: pointer;
+      
+      &:hover {
+        background: lighten($primary, 48%);
+      }
+      
+      &.flagged {
+        background: lighten($warning, 40%);
+      }
+    }
+    
+    td {
+      padding: 1rem;
+      color: $text-dark;
+    }
+  }
+}
+
+.shipmentNumber {
+  font-weight: 600;
+  color: $primary;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $white;
+  text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: $radius;
+  background: transparent;
+  border: 1px solid $border;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: $transition;
+  
+  &:hover {
+    background: $light-bg;
+    transform: scale(1.1);
+  }
+  
+  &.flagged {
+    background: lighten($warning, 30%);
+    border-color: $warning;
+  }
+  
+  &.delete:hover {
+    background: lighten($danger, 40%);
+    border-color: $danger;
+  }
+}
+
+@media (max-width: 1200px) {
+  .gridContainer {
+    overflow-x: auto;
+  }
+  
+  .table {
+    min-width: 1000px;
+  }
+}
