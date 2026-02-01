@@ -1,7 +1,7 @@
-@import '../styles/variables.scss';
+@import "../styles/variables.scss";
 
 .dashboard {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -10,14 +10,14 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
-  
+
   h1 {
     font-size: 2rem;
     font-weight: 700;
     color: $text-dark;
     margin-bottom: 0.5rem;
   }
-  
+
   p {
     color: $text-light;
     font-size: 1rem;
@@ -39,7 +39,7 @@
   border-radius: $radius;
   box-shadow: $shadow;
   overflow: hidden;
-  
+
   button {
     padding: 0.75rem 1.5rem;
     background: transparent;
@@ -48,12 +48,12 @@
     font-weight: 500;
     cursor: pointer;
     transition: $transition;
-    
+
     &.active {
       background: $primary;
       color: $white;
     }
-    
+
     &:hover:not(.active) {
       background: $light-bg;
     }
@@ -69,12 +69,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  
+
   span {
     color: $text-light;
     font-size: 0.875rem;
   }
-  
+
   strong {
     color: $primary;
     font-size: 1.125rem;
@@ -94,7 +94,7 @@
   background: $white;
   border-radius: $radius-lg;
   box-shadow: $shadow;
-  
+
   button {
     padding: 0.625rem 1.25rem;
     background: $primary;
@@ -104,18 +104,18 @@
     font-weight: 500;
     cursor: pointer;
     transition: $transition;
-    
+
     &:hover:not(:disabled) {
       background: $primary-dark;
       transform: translateY(-1px);
     }
-    
+
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
   }
-  
+
   span {
     color: $text-dark;
     font-weight: 500;
